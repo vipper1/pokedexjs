@@ -1,5 +1,5 @@
 const pokedex_container = document.getElementById('pokedex_container');
-const pokemon_number = 150;
+const pokemon_number = 809;
 const colors = {
 	fire: '#FDDFDF',
 	grass: '#DEFDE0',
@@ -8,18 +8,19 @@ const colors = {
 	ground: '#F4E7DA',
 	rock: '#D5D5D4',
 	fairy: '#FCEAFF',
-	poison: '#E9E3FF',
+	poison: '#b9a8ed',
 	bug: '#F8D5A3',
 	dragon: '#97B3E6',
-	psychic: '#EAEDA1',
+	psychic: '#FFCAE6',
 	flying: '#F5F5F5',
 	fighting: '#E6E0D4',
-	normal: '#F5F5F5'
+    normal: '#F5F5F5',
+    dark: '#bdbbbf',
+    ghost: '#aeaaf7',
+    ice: '#86D6D8'
 };
 
-
 const main_types = Object.keys(colors);
-
 console.log(main_types)
 
 const fetchPokemons = async () => {
@@ -40,12 +41,19 @@ fetchPokemons()
 function createPokemonCard(pokemon) {
     const pokemonEl = document.createElement('div');
     pokemonEl.classList.add('pokemon');
-
-    const poke_types= pokemon.types.map(el => el.type.name);
-    const type = main_types.find(type => poke_types.indexOf(type) > -1 );
-    const tipo = type.charAt(0).toUpperCase() + type.substr(1);
+    
+    const poke_types= pokemon.types.map(el => el.type.name).join(', ')
+    const type = main_types.find(type => poke_types.indexOf(type) > -1 )
+    const tipo = poke_types.charAt(0).toUpperCase() + poke_types.substr(1)
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
     const color = colors[type];
+    const weight = pokemon.weight;
+    const height = pokemon.height;
+    const health = pokemon.stats[0].base_stat;
+    const attack = pokemon.stats[1].base_stat;
+    const defense = pokemon.stats[2].base_stat;
+    
+
 
     pokemonEl.style.backgroundColor = color;
     const pokeInnerHTML = `
@@ -56,11 +64,29 @@ function createPokemonCard(pokemon) {
         <div class="info">
             <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
             <h3 class="name">${name}</h3>
-            <small class="type">Tipo: <span>${tipo}</span></small>
+            <h4 class="stats"><i>Estadísticas</i></h4>
+            <small class="type"><b>Tipo:</b> <span id="pcolor">${poke_types.toUpperCase()}</span></small><br>
+            <small class="height"><b>Altura:</b> <span>${height.toString().padStart(2, '0')}m</span></small><br>
+            <small class="weight"><b>Peso:</b> <span>${weight}kg</span></small><br>
+            <small class="health"><b>Salud:</b> <span>${health} hp</span></small><br>
+            <small class="health"><b>Ataque:</b> <span>${attack}</span></small><br>
+            <small class="health"><b>Defensa:</b> <span>${defense}</span></small><br>
         </div>
     `;
-
 
     pokemonEl.innerHTML = pokeInnerHTML;
     pokedex_container.appendChild(pokemonEl);
 }
+
+const toTop = document.querySelector(".to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    toTop.classList.add("active");
+  } else {
+    toTop.classList.remove("active");
+  }
+})
+
+
+
