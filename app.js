@@ -1,5 +1,5 @@
 const pokedex_container = document.getElementById('pokedex_container');
-const pokemon_number = 809;
+const pokemon_number = 493;
 const colors = {
 	fire: '#FDDFDF',
 	grass: '#DEFDE0',
@@ -87,6 +87,8 @@ window.addEventListener("scroll", () => {
     toTop.classList.remove("active");
   }
 })
+
+
 
 
 

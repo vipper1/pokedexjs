@@ -1,10 +1,21 @@
 ### Alcance
 
-> * La aplicación se basa en mostrar los 150 primeros pokemón de primera generación donde se aprecian los siguientes datos:* La aplicación se basa en mostrar los 150 primeros pokemón de primera generación donde se aprecian los siguientes datos:
+> * El alcance de la aplicación es mostrar los pokemones de toda la serie con los siguientes datos:*
 
-		N° Pokemón
-		Tipo Pokemón
-		Nombre Pokemón
+		N° Pokemón.
+		Tipo Pokemón.
+        Altura Pokemón.
+		Peso Pokemón.
+        Salud Pokemón.
+        Ataque Pokemón.
+        Defensa Pokemón.
+
+### ¿Que hay de nuevo?
+
+>   *   Esta nueva verisón trae los siguientes cambios:*
+        Generación 2, 3 y 4 añadidas.
+        Estadísticas base del pokemón.
+
 
 
 ### Acerca de PokedexJS
