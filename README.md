@@ -1,6 +1,6 @@
 ### Alcance
 
-> * El alcance de la aplicación es mostrar los pokemones de toda la serie con los siguientes datos:*
+> * El alcance de la aplicación es mostrar los pokemones de toda la serie con los siguientes datos:
 
 		N°.
 		Nombre.
@@ -26,9 +26,8 @@ El siguiente apartado describe las palabras que se muestran en la app las cuales
 | Ataque | Estadística base de ataque del Pokemón. |
 | Defensa | Estadística base de la defensa del Pokemón. |
 
-### ¿Que hay de nuevo?
-
-Esta nueva verisón trae los siguientes cambios:
+### ¿Que hay de nuevo en la versión 1.1?
+Añadido: 
 
 - Generación 2, 3 y 4 añadidas.
 - Estadísticas base del pokemón.
