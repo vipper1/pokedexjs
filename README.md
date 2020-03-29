@@ -11,6 +11,8 @@
         	Ataque.
         	Defensa.
 
+##Demo en [now.sh](https://pokedexjs-1.now.sh/)
+
 ### Diccionario App
 
 El siguiente apartado describe las palabras que se muestran en la app las cuales son:
